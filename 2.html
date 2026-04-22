@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋教育資源網 | 減塑專題小組</title>
+    <style>
+        :root {
+            --school-blue: #1a4a72; /* 典型的學院深藍 */
+            --ocean-cyan: #00acc1;
+            --paper-white: #fdfdfd;
+            --border-gray: #dee2e6;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", "Microsoft JhengHei", sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+        }
+
+        /* 學校頂部標誌區 */
+        .top-bar {
+            background-color: var(--school-blue);
+            color: white;
+            padding: 10px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--ocean-cyan);
+        }
+
+        .school-logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* 導覽列 */
+        nav {
+            background: white;
+            padding: 0 10%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            display: block;
+            padding: 15px 25px;
+            text-decoration: none;
+            color: var(--school-blue);
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        nav ul li a:hover {
+            background: #eef2f5;
+            color: var(--ocean-cyan);
+        }
+
+        /* 橫幅區 */
+        .hero-banner {
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                        url('https://images.unsplash.com/photo-1518467166778-b88f373ffec7?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .main-content {
+            max-width: 1100px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        /* 知識卡片區 */
+        .edu-section {
+            background: white;
+            padding: 25px;
+            border-radius: 4px;
+            border: 1px solid var(--border-gray);
+        }
+
+        .edu-section h2 {
+            border-left: 5px solid var(--school-blue);
+            padding-left: 15px;
+            color: var(--school-blue);
+            margin-bottom: 20px;
+        }
+
+        /* 模仿測驗卷的計算機 */
+        .calc-paper {
+            background: #fff;
+            padding: 25px;
+            border-radius: 4px;
+            border: 2px solid var(--school-blue);
+            position: relative;
+        }
+
+        .calc-paper::before {
+            content: "ASSIGNMENT";
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 0.7rem;
+            color: #ccc;
+            letter-spacing: 2px;
+        }
+
+        .calc-paper h3 {
+            text-align: center;
+            color: var(--school-blue);
+            margin-top: 0;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .question label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .question input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn-submit {
+            background-color: var(--school-blue);
+            color: white;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
+        }
+
+        .btn-submit:hover {
+            background-color: #255d8d;
+        }
+
+        /* 結果顯示區 */
+        #report-card {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            display: none;
+        }
+
+        .footer {
+            background: #333;
+            color: #aaa;
+            padding: 30px 10%;
+            margin-top: 50px;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 768px) {
+            .main-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="school-logo">⚓ 2026 海洋教育網</div>
+    <div style="font-size: 0.8rem;">[ 校園入口網 | 數位學習平台 ]</div>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="#">首頁</a></li>
+        <li><a href="#">科普文章</a></li>
+        <li><a href="#">互動教具</a></li>
+        <li><a href="#">關於我們</a></li>
+    </ul>
+</nav>
+
+<div class="hero-banner">
+    <h1>海洋環境保育專題：減塑生活</h1>
+</div>
+
+<div class="main-content">
+    <div class="edu-section">
+        <h2>海洋塑膠危害專欄</h2>
+        <p>根據研究顯示，每年有數百萬噸塑膠廢棄物進入海洋。這些塑膠不僅威脅到海龜、魚類的生命安全，更會經由生物累積作用回到我們的餐桌。身為校園的一份子，我們應該從日常生活開始改變。</p>
+        <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=700&q=60" style="width:100%; border-radius:4px; margin: 15px 0;">
+        <p><b>教學重點：</b><br>1. 認識微塑膠對食物鏈的影響。<br>2. 實踐 5R 原則：Refuse, Reduce, Reuse, Recycle, Rot。</p>
+    </div>
+
+    <aside>
+        <div class="calc-paper">
+            <h3>塑膠足跡自我測驗</h3>
+            <div class="question">
+                <label>1. 每週使用塑膠飲料瓶次數：</label>
+                <input type="number" id="q1" placeholder="次">
+            </div>
+            <div class="question">
+                <label>2. 每週使用外帶塑膠袋次數：</label>
+                <input type="number" id="q2" placeholder="次">
+            </div>
+            <div class="question">
+                <label>3. 每週使用一次性餐具次數：</label>
+                <input type="number" id="q3" placeholder="次">
+            </div>
+            <button class="btn-submit" onclick="checkImpact()">計算我的年度足跡</button>
+
+            <div id="report-card">
+                <b style="color:var(--school-blue)">[ 分析報告 ]</b>
+                <p id="res-data"></p>
+                <p id="res-grade" style="font-weight: bold; color: #d32f2f;"></p>
+            </div>
+        </div>
+    </aside>
+</div>
+
+<div class="footer">
+    環境教育組 版權所有 | 聯絡我們：ocean-edu@school.edu.tw<br>
+    地址：海洋教育推廣中心 3樓 302辦公室
+</div>
+
+<script>
+    function checkImpact() {
+        const v1 = parseInt(document.getElementById('q1').value) || 0;
+        const v2 = parseInt(document.getElementById('q2').value) || 0;
+        const v3 = parseInt(document.getElementById('q3').value) || 0;
+
+        const totalYear = (v1 + v2 + v3) * 52;
+        const report = document.getElementById('report-card');
+        const resData = document.getElementById('res-data');
+        const resGrade = document.getElementById('res-grade');
+
+        report.style.display = 'block';
+        resData.innerHTML = `預估你每年共產生 <b>${totalYear}</b> 件塑膠廢棄物。`;
+
+        if (totalYear > 500) {
+            resGrade.innerText = "評語：需積極落實校園減塑政策！";
+        } else if (totalYear > 0) {
+            resGrade.innerText = "評語：表現尚可，請嘗試完全不使用塑膠。";
+            resGrade.style.color = "#388e3c";
+        } else {
+            resGrade.innerText = "評語：恭喜！你是完美的環保楷模。";
+            resGrade.style.color = "#00796b";
+        }
+    }
+</script>
+
+</body>
+</html>
